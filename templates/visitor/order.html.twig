@@ -16,7 +16,6 @@
                 {{ form_row(form.postalCode) }}
             </div>
             <button class="button btn d-flex mx-auto">Betalen</button>
-            <a href="{{ path('app_payed') }}">Betaald</a>
             {{ form_end(form) }}
         </div>
         <div class="col-md-6">
@@ -25,7 +24,7 @@
                     <h4 class="mb-0 mt-5 p-2">Jouw bestelling</h4>
                 </div>
                 <div class="shopper_second flex-column py-1">
-                    <br><br><br>
+{#                    <p>{{ product.name }}</p>#}
                     <hr>
                     <p class="p-2">Totaal:
                         <span class="float-end me-4"></span></p>
