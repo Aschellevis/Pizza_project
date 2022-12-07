@@ -66,7 +66,7 @@
         "actionName" : "click",
         "object" : {
           "type" : "raw",
-          "object" : "/html/body/div[2]/div[1]/div[2]/a/button",
+          "object" : "/html/body/div[2]/div[2]/div/div[2]/div/a",
           "pageScannerQuery" : null,
           "pageObjectReference" : null
         },
@@ -309,7 +309,7 @@
   "dataDrivenStorageId" : null,
   "tags" : [ ],
   "metaData" : {
-    "lastModifiedDateTime" : "2022-11-24T15:51:26.596",
+    "lastModifiedDateTime" : "2022-12-07T09:36:45.932",
     "creationDateTime" : "2022-11-21T09:33:48.019",
     "lastSuccessfulRunDateTime" : null
   }
