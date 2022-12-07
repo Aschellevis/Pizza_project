@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container-md p-5">
+        <form method="post" class="row">
+            <div class="col-md-3 mb-3 ms-auto">
+                <label for="exampleInputFirstName1" class="form-label m-0">Voornaam</label>
+                <input type="firstName" class="form-control" id="exampleInputFirstName1">
+            </div>
+            <div class= "col-md-3 mb-3 me-auto">
+                <label for="exampleInputLastName1" class="form-label m-0">Achternaam</label>
+                <input type="lastName" class="form-control" id="exampleInputLastName1">
+            </div>
+            <div class="col-md-1"></div>
+            <div class= "col-md-6 mb-3 mx-auto">
+                <label for="exampleInputPassword1" class="form-label m-0">Wachtwoord</label>
+                <input type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-6 mx-auto d-flex justify-content-center">
+                <button type="submit" class="btn">Inloggen</button>
+            </div>
+            <div class="col-md-1"></div>
+        </form>
+    </div>
+{% endblock %}

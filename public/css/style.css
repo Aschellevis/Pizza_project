@@ -1,0 +1,184 @@
+.navbar {
+    background-image: linear-gradient(to right, #009246, #ffffff, #CE2B37);
+}
+
+.navbar-brand img {
+    width: 100px;
+}
+
+.nav-link {
+    color: #000000;
+}
+
+.nav-link:hover {
+    background-color: #ffffff;
+    border-radius: 7px;
+    color: #000000;
+    transition-duration: 1s;
+}
+
+.banner {
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.shopper {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 30px;
+    width: 325px;
+    right: 30px;
+    z-index: 2;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.shopper_first {
+    background-color: #333333;
+    color: #ffffff;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.shopper_second {
+    background-color: #e6e6e6;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.shopper_second hr {
+    width: 85%;
+    margin: auto;
+}
+
+.shopper_second .button {
+    text-decoration: none;
+    background-color: #333333;
+    position: relative;
+}
+
+.text-block {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.text-block {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: black;
+    opacity: 0.5;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.text-block h1 {
+    margin-top: 150px;
+    opacity: 1;
+}
+
+.main_home {
+    min-height: 300px;
+}
+
+.card {
+    border: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card-body {
+    min-height: 130px;
+}
+
+.main img {
+    width: 100%;
+    height: auto;
+}
+
+.pizza_block .button {
+    background-color: #00cc44;
+    box-shadow: 0 10px 10px 0 rgba(0, 204, 68, 0.6), 0 10px 10px 0 rgba(0, 204, 68, 0.6);
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    text-decoration: none;
+    position: absolute;
+}
+
+.pizza_block .button:hover {
+    background-color: #00b33c;
+    color: #000000;
+}
+
+.home {
+    min-height: 300px;
+}
+
+.pizza_breakpoint {
+    border-left: 1px solid lightgrey;
+    margin: 80px 0;
+}
+
+.shopper_second .btn, .order .btn {
+    background-color: #00cc44;
+    color: #000000;
+    box-shadow: 0 10px 10px 0 rgba(0, 204, 68, 0.6), 0 10px 10px 0 rgba(0, 204, 68, 0.6);
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    text-decoration: none;
+}
+
+.shopper_second .btn:hover {
+    background-color: #00b33c;
+    color: #000000;
+}
+
+form .btn:hover {
+    background-color: #00b33c;
+    color: #000000;
+}
+
+.payed img {
+    width: 350px;
+}
+
+.footer {
+    background-color: #333333;
+    height: 150px;
+    bottom: 0;
+}
+
+.footer .name {
+    border-right: #ffffff 3px solid;
+    padding: 18px 0 50px 50px;
+}
+
+.footer h3 {
+    color: #ffffff;
+    font-size: 26px;
+}
+
+.footer .links {
+    padding: 18px 0 0 30px;
+    color: #ffffff;
+    font-size: 12px;
+}
+
+.footer p {
+    line-height: 1.7;
+}
+
+.footer .media {
+    padding: 90px 50px 0 0;
+}
+
+.footer i {
+    text-align: right;
+    margin-left: 5px;
+    margin-right: 5px;
+    color: #ffffff;
+    font-size: 20px;
+}

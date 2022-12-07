@@ -1,0 +1,34 @@
+{
+  "drivers" : [ {
+    "displayName" : "Remote Firefox",
+    "hubUri" : "http://localhost:4444/wd/hub",
+    "browserName" : "firefox",
+    "platform" : "WINDOWS",
+    "capabilities" : { }
+  }, {
+    "displayName" : "Remote Internet Explorer",
+    "hubUri" : "http://localhost:4444/wd/hub",
+    "browserName" : "internet explorer",
+    "platform" : "WINDOWS",
+    "version" : "11",
+    "capabilities" : {
+      "ignoreProtectedModeSettings" : true,
+      "ignoreZoomSetting" : true
+    }
+  }, {
+    "displayName" : "Remote Chrome",
+    "hubUri" : "http://localhost:4444/wd/hub",
+    "browserName" : "chrome",
+    "platform" : "WINDOWS",
+    "version" : "58",
+    "capabilities" : { }
+  }, {
+    "displayName" : "Headless Chrome",
+    "hubUri" : "http://localhost:4444/wd/hub",
+    "browserName" : "chrome",
+    "platform" : "WINDOWS",
+    "version" : "58",
+    "capabilities" : { },
+    "arguments" : [ "--headless" ]
+  } ]
+}

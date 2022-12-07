@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-7">
+                <div class="row pt-5 ps-3 fs-5">
+                    <div class="col-1 text-end">
+                        <i class="bi bi-telephone"></i>
+                    </div>
+                    <div class="col-11">
+                        <p class="mb-1">06-11111111</p>
+                    </div>
+                    <div class="col-1 text-end">
+                        <i class="bi bi-signpost"></i>
+                    </div>
+                    <div class="col-11">
+                        <p class="mb-1">Stationsplein 9, Eindhoven</p>
+                    </div>
+                    <div class="col-1 text-end">
+                        <i class="bi bi-envelope-open"></i>
+                    </div>
+                    <div class="col-11">
+                        <p>sopranos@outlook.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-5">
+                <img class="mx-auto d-block w-100 p-5" src="../{{ asset('img/contact.jpg') }}" alt="bedankje">
+            </div>
+        </div>
+    </div>
+{% endblock %}

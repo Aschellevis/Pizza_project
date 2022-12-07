@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello VisitorController!{% endblock %}
+
+{% block body %}
+<div class="order container-md py-5">
+    <div class="row p-5">
+        <div class="col-md-6">
+            {{ form_start(form) }}
+            <div class="row">
+                {{ form_row(form.firstName) }}
+                {{ form_row(form.lastName) }}
+                {{ form_row(form.street) }}
+                {{ form_row(form.number) }}
+                {{ form_row(form.addition) }}
+                {{ form_row(form.postalCode) }}
+            </div>
+            <button class="button btn d-flex mx-auto">Betalen</button>
+            <a href="{{ path('app_payed') }}">Betaald</a>
+            {{ form_end(form) }}
+        </div>
+        <div class="col-md-6">
+            <div class="shopper float-end">
+                <div class="shopper_first">
+                    <h4 class="mb-0 mt-5 p-2">Jouw bestelling</h4>
+                </div>
+                <div class="shopper_second flex-column py-1">
+                    <br><br><br>
+                    <hr>
+                    <p class="p-2">Totaal:
+                        <span class="float-end me-4"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    {% endblock %}
