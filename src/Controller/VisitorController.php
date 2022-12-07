@@ -4,14 +4,17 @@ namespace App\Controller;
 
 use App\Entity\Category;
 use App\Entity\Order;
+use App\Entity\User;
 use App\Form\OrderType;
 use App\Entity\Product;
 use App\Repository\OrderRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class VisitorController extends AbstractController
 {
@@ -42,11 +45,17 @@ class VisitorController extends AbstractController
     }
 
     #[Route('/login', name: 'app_login')]
-    public function loginAction(): Response
+    public function loginAction(AuthenticationUtils $authenticationUtils): Response
     {
-        return $this->render('visitor/login.html.twig', [
-            'login' => 'VisitorController',
-        ]);
+        // get the login error if there is one
+        $error = $authenticationUtils->getLastAuthenticationError();
+
+        // last username entered by the user
+        $lastUsername = $authenticationUtils->getLastUsername();
+          return $this->render('visitor/login.html.twig', [
+              'last_username' => $lastUsername,
+              'error'         => $error,
+          ]);
     }
 
     #[Route('/contact', name: 'app_contact')]
@@ -96,4 +105,29 @@ class VisitorController extends AbstractController
             'payed' => 'VisitorController',
         ]);
     }
+
+//    #[Route('/test', name: 'app_test')]
+//    public function test(UserPasswordHasherInterface $passwordHasher, ManagerRegistry $doctrine)
+//    {
+//        $entityManager = $doctrine->getManager();
+//
+//        // ... e.g. get the user data from a registration form
+//        $user = new User();
+//        $plaintextPassword = "qwerty";
+//
+//        // hash the password (based on the security.yaml config for the $user class)
+//        $hashedPassword = $passwordHasher->hashPassword(
+//            $user,
+//            $plaintextPassword
+//        );
+//        $user->setPassword($hashedPassword);
+//        $user->setEmail("baker@email.com");
+//        $user->setRoles((array)"ROLE_ADMIN");
+//
+//        $entityManager->persist($user);
+//
+//        $entityManager->flush();
+//
+//        return $this->redirectToRoute('app_visitor');
+//    }
 }

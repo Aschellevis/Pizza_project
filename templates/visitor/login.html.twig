@@ -2,25 +2,21 @@
 
 {% block body %}
     <div class="container-md p-5">
-        <form method="post" class="row">
-            <div class="col-md-3 mb-3 ms-auto">
-                <label for="exampleInputFirstName1" class="form-label m-0">Voornaam</label>
-                <input type="firstName" class="form-control" id="exampleInputFirstName1">
-            </div>
-            <div class= "col-md-3 mb-3 me-auto">
-                <label for="exampleInputLastName1" class="form-label m-0">Achternaam</label>
-                <input type="lastName" class="form-control" id="exampleInputLastName1">
-            </div>
-            <div class="col-md-1"></div>
-            <div class= "col-md-6 mb-3 mx-auto">
-                <label for="exampleInputPassword1" class="form-label m-0">Wachtwoord</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
-            </div>
-            <div class="col-md-1"></div>
-            <div class="col-md-6 mx-auto d-flex justify-content-center">
-                <button type="submit" class="btn">Inloggen</button>
-            </div>
-            <div class="col-md-1"></div>
+        {% if error %}
+            <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %}
+
+        <form action="{{ path('app_login') }}" method="post">
+            <label for="username">Email:</label>
+            <input type="text" id="username" name="_username" value="{{ last_username }}"/>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="_password"/>
+
+            {# If you want to control the URL the user is redirected to on success #}
+        <input type="hidden" name="_target_path" value="/"/>
+
+            <button type="submit">login</button>
         </form>
     </div>
 {% endblock %}
