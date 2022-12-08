@@ -24,7 +24,7 @@ class VisitorController extends AbstractController
         $categories = $doctrine->getRepository(Category::class)->findAll();
 
         return $this->render('visitor/index.html.twig', [
-            'categories'=>$categories,
+            'categories' => $categories,
         ]);
     }
 
@@ -40,22 +40,23 @@ class VisitorController extends AbstractController
     public function show(ManagerRegistry $doctrine, int $category_id, Request $request): Response
     {
         $category = $doctrine->getRepository(Category::class)->find($category_id);
-        return $this->render("visitor/pizza.html.twig",[
-            'category'=>$category]);
+        return $this->render("visitor/pizza.html.twig", [
+            'category' => $category]);
     }
 
     #[Route('/login', name: 'app_login')]
-    public function loginAction(AuthenticationUtils $authenticationUtils): Response
+    public function login(AuthenticationUtils $authenticationUtils): Response
     {
         // get the login error if there is one
         $error = $authenticationUtils->getLastAuthenticationError();
 
         // last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
-          return $this->render('visitor/login.html.twig', [
-              'last_username' => $lastUsername,
-              'error'         => $error,
-          ]);
+
+        return $this->render('visitor/login.html.twig', [
+            'last_username' => $lastUsername,
+            'error' => $error,
+        ]);
     }
 
     #[Route('/contact', name: 'app_contact')]
@@ -106,28 +107,33 @@ class VisitorController extends AbstractController
         ]);
     }
 
-//    #[Route('/test', name: 'app_test')]
-//    public function test(UserPasswordHasherInterface $passwordHasher, ManagerRegistry $doctrine)
-//    {
-//        $entityManager = $doctrine->getManager();
-//
-//        // ... e.g. get the user data from a registration form
-//        $user = new User();
-//        $plaintextPassword = "qwerty";
-//
-//        // hash the password (based on the security.yaml config for the $user class)
-//        $hashedPassword = $passwordHasher->hashPassword(
-//            $user,
-//            $plaintextPassword
-//        );
-//        $user->setPassword($hashedPassword);
-//        $user->setEmail("baker@email.com");
-//        $user->setRoles((array)"ROLE_ADMIN");
-//
-//        $entityManager->persist($user);
-//
-//        $entityManager->flush();
-//
-//        return $this->redirectToRoute('app_visitor');
-//    }
+    #[Route('/test', name: 'test')]
+    public function test(UserPasswordHasherInterface $passwordHasher, ManagerRegistry $doctrine)
+    {
+        $entityManager = $doctrine->getManager();
+        // ... e.g. get the user data from a registration form
+        $user = new User();
+        $plaintextPassword = "qwerty";
+
+        // hash the password (based on the security.yaml config for the $user class)
+        $hashedPassword = $passwordHasher->hashPassword(
+            $user,
+            $plaintextPassword
+        );
+        $user->setPassword($hashedPassword);
+        $user->setEmail("baker@email.com");
+        $user->setRoles(["ROLE_BAKER"]);
+
+        // ...
+
+        // tell Doctrine you want to (eventually) save the User (no queries yet)
+        $entityManager->persist($user);
+
+        // actually executes the queries (i.e. the INSERT query)
+        $entityManager->flush();
+        $this->addFlash("success", "een nieuwe user gemaakt");
+
+        return $this->redirectToRoute('app_visitor');
+    }
+
 }
