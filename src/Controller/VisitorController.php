@@ -59,6 +59,12 @@ class VisitorController extends AbstractController
         ]);
     }
 
+    #[Route('/logout', name: 'app_logout')]
+    public function logout()
+    {
+
+    }
+
     #[Route('/contact', name: 'app_contact')]
     public function contactAction(): Response
     {
@@ -107,33 +113,33 @@ class VisitorController extends AbstractController
         ]);
     }
 
-    #[Route('/test', name: 'test')]
-    public function test(UserPasswordHasherInterface $passwordHasher, ManagerRegistry $doctrine)
-    {
-        $entityManager = $doctrine->getManager();
-        // ... e.g. get the user data from a registration form
-        $user = new User();
-        $plaintextPassword = "qwerty";
-
-        // hash the password (based on the security.yaml config for the $user class)
-        $hashedPassword = $passwordHasher->hashPassword(
-            $user,
-            $plaintextPassword
-        );
-        $user->setPassword($hashedPassword);
-        $user->setEmail("baker@email.com");
-        $user->setRoles(["ROLE_BAKER"]);
-
-        // ...
-
-        // tell Doctrine you want to (eventually) save the User (no queries yet)
-        $entityManager->persist($user);
-
-        // actually executes the queries (i.e. the INSERT query)
-        $entityManager->flush();
-        $this->addFlash("success", "een nieuwe user gemaakt");
-
-        return $this->redirectToRoute('app_visitor');
-    }
+//    #[Route('/test', name: 'test')]
+//    public function test(UserPasswordHasherInterface $passwordHasher, ManagerRegistry $doctrine)
+//    {
+//        $entityManager = $doctrine->getManager();
+//        // ... e.g. get the user data from a registration form
+//        $user = new User();
+//        $plaintextPassword = "qwerty";
+//
+//        // hash the password (based on the security.yaml config for the $user class)
+//        $hashedPassword = $passwordHasher->hashPassword(
+//            $user,
+//            $plaintextPassword
+//        );
+//        $user->setPassword($hashedPassword);
+//        $user->setEmail("baker@email.com");
+//        $user->setRoles(["ROLE_BAKER"]);
+//
+//        // ...
+//
+//        // tell Doctrine you want to (eventually) save the User (no queries yet)
+//        $entityManager->persist($user);
+//
+//        // actually executes the queries (i.e. the INSERT query)
+//        $entityManager->flush();
+//        $this->addFlash("success", "een nieuwe user gemaakt");
+//
+//        return $this->redirectToRoute('app_visitor');
+//    }
 
 }
