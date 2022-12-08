@@ -39,6 +39,9 @@ class Order
     #[ORM\JoinColumn(nullable: false)]
     private ?Product $pizza = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $size = null;
+
     public function __construct()
     {
         $this->pizza_id = new ArrayCollection();
@@ -129,6 +132,18 @@ class Order
     public function setPizza(?Product $pizza): self
     {
         $this->pizza = $pizza;
+
+        return $this;
+    }
+
+    public function getSize(): ?string
+    {
+        return $this->size;
+    }
+
+    public function setSize(string $size): self
+    {
+        $this->size = $size;
 
         return $this;
     }

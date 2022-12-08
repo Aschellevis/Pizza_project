@@ -45,9 +45,8 @@ class AdminController extends AbstractController
     #[Route('/admin', name: 'app_admin')]
     public function adminAction(Request $request, ManagerRegistry $doctrine): Response
     {
-        $entityManager = $doctrine->getManager();
+        $orders = $doctrine->getRepository(Order::class)->findAll();
 
-        $orders = $doctrine->getRepository(Order::class)->find($id);
         return $this->render('admin/index.html.twig', [
             'orders' => $orders,
         ]);

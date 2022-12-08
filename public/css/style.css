@@ -121,7 +121,7 @@
     margin: 80px 0;
 }
 
-.shopper_second .btn, .order .btn {
+.shopper_second .btn, .order .btn, form .btn {
     background-color: #00cc44;
     color: #000000;
     box-shadow: 0 10px 10px 0 rgba(0, 204, 68, 0.6), 0 10px 10px 0 rgba(0, 204, 68, 0.6);
