@@ -6,20 +6,23 @@
             <thead>
             <tr>
                 <th scope="col">Naam</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col">Adres</th>
+                <th scope="col">Status</th>
             </tr>
             </thead>
             <tbody>
             {% for order in orders %}
             <tr>
                 <td>{{ order.firstName }} {{ order.lastName }}</td>
-            </tr>
-            <tr>
-
-            </tr>
-            <tr>
-
+                <td>{{ order.street }} {{ order.number }}{{ order.addition }}, {{ order.postalCode }}</td>
+                <td>
+                    <select class="form-select w-50" aria-label="Default select example">
+                        <option value="1">Wordt bereid</option>
+                        <option value="2">In de oven</option>
+                        <option value="3">Klaar</option>
+                        <option value="4">Onderweg</option>
+                    </select>
+                </td>
             </tr>
             {% endfor %}
             </tbody>

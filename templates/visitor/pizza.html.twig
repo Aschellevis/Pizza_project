@@ -26,6 +26,12 @@
                         <div class="card-body p-3">
                             <h5>{{ pizza.name }}</h5>
                             <p>{{ pizza.ingredients }}</p>
+                            <select class="form-select w-50" aria-label="Default select example">
+                                <option selected>Maat kiezen</option>
+                                <option value="1">Medium</option>
+                                <option value="2">Large</option>
+                                <option value="3">Calzone</option>
+                            </select>
                             <br>
                             <p>€{{ pizza.price }}</p>
                             <a href="{{ path('app_order', {id:pizza.id}) }}" class="button text-decoration-none"><button type="button" class="btn mx-auto d-block">Toevoegen</button></a>

@@ -11,23 +11,17 @@ class OrderType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
-//        <select class="form-select w-50" aria-label="Default select example">
-//                                <option selected>Maat kiezen</option>
-//                                <option value="1">Medium</option>
-//                                <option value="2">Large</option>
-//                                <option value="3">Calzone</option>
-//                            </select>
         $builder
-            ->add('size', null, [
-                'label' => "Maat",
-                'attr' => [
-                    'class' => "my-0 form-select"
-                ],
-                'row_attr' => [
-                    'class' => "col-md-12 mb-3",
-                ],
-
-            ])
+//            ->add('size', null, [
+//                'label' => "Maat",
+//                'attr' => [
+//                    'class' => "my-0 form-select"
+//                ],
+//                'row_attr' => [
+//                    'class' => "col-md-12 mb-3",
+//                ],
+//
+//            ])
             ->add('firstName', null, [
                 'label' => "Voornaam",
                 'attr' => [
